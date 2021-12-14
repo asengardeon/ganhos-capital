@@ -1,9 +1,11 @@
 import json
 from typing import List
 
+from singleton_decorator import singleton
+
 from capital.capital.unit_capital import OperationEnum, UnitCapital
 
-
+@singleton
 class JsonAdapter:
 
     def __json_operation_to_operation_enum__(self, operation: str)->OperationEnum:
