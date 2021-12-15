@@ -3,7 +3,8 @@ from typing import List
 
 from singleton_decorator import singleton
 
-from capital.capital.unit_capital import OperationEnum, UnitCapital
+from source.capital.business.unit_capital import UnitCapital, OperationEnum
+
 
 @singleton
 class JsonAdapter:
@@ -26,3 +27,12 @@ class JsonAdapter:
             new_capital = UnitCapital(converted_operation, float(unit_cost), int(quantity))
             result.append(new_capital)
         return result
+
+    def tax_list_to_json(self, data: List[float]):
+        result = []
+        for item in data:
+            result.append({"tax": item})
+        return json.dumps(result)
+
+
+
