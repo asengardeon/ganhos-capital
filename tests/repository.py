@@ -1,8 +1,7 @@
 import unittest
 
-from capital.repository.capital import CapitalRepository
-
-from capital.adapter.json_adapter import JsonAdapter
+from source.capital.adapter.json_adapter import JsonAdapter
+from source.capital.repository.capital import CapitalRepository
 
 
 class RepositoryCapitalTestcCase(unittest.TestCase):
@@ -20,7 +19,7 @@ class RepositoryCapitalTestcCase(unittest.TestCase):
         json = '[{	"operation": "buy",	"unit-cost": 10,	"quantity": 10000}, {	"operation": "sell",	"unit-cost": 20,	"quantity": 5000}]'
         capital = self.adapter.json_to_unit_list(json)
         self.repo.add_list(capital)
-        self.assertEqual(self.repo.get_data.count, 2)
+        self.assertEqual(len(self.repo.get_data()), 2)
 
 
 

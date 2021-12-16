@@ -20,8 +20,10 @@ class Calculus:
     def __calculate_taxes(self, item: UnitCapital, buy_list: List[UnitCapital]):
         poderated_average = self.__calculate_poderated_average(buy_list, item)
         sell_value = item.unit_cost * item.quantity
-        tax_value = (poderated_average * item.quantity - sell_value)
-        tax_value = 0 if tax_value <= 0 else tax_value
+        sold_value = (sell_value - (poderated_average * item.quantity))
+        tax_value = 0
+        if sold_value >= 20000:
+            tax_value = sold_value * 0.2
         return tax_value
 
 

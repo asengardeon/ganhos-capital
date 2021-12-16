@@ -30,4 +30,3 @@ class SellCapitalTestcCase(unittest.TestCase):
         self.assertEqual(len(capital_data), 1)
         item = capital_data[0]
         self.assertEqual(item.quantity, 5000)
-s
