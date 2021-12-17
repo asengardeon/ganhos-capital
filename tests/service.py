@@ -67,5 +67,6 @@ class ServiceTestCase(unittest.TestCase):
         self.assertEqual(result[0]['tax'], 0)
         self.assertEqual(result[1]['tax'], 0)
         self.assertEqual(result[2]['tax'], 0)
-        self.assertEqual(result[3]['tax'], 3000)
+        self.assertEqual(result[3]['tax'], 0)
+        self.assertEqual(result[4]['tax'], 3000)
 

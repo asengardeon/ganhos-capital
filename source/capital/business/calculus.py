@@ -17,18 +17,23 @@ class Calculus:
         return 0 if total_items == 0 else total_buy / total_items
 
 
-    def __calculate_taxes(self, item: UnitCapital, buy_list: List[UnitCapital]):
+    def __calculate_taxes(self, item: UnitCapital, buy_list: List[UnitCapital], loss: float):
         poderated_average = self.__calculate_poderated_average(buy_list, item)
         sell_value = item.unit_cost * item.quantity
         sold_value = (sell_value - (poderated_average * item.quantity))
         tax_value = 0
-        if sold_value >= 20000:
-            tax_value = sold_value * 0.2
-        return tax_value
+        sold_value_with_loss = sold_value + loss
+        if sold_value_with_loss <= 0:
+            loss = sold_value_with_loss
+        else:
+            loss = 0
+        if loss == 0 and sell_value > 20000 and sold_value_with_loss > 0:
+            tax_value = sold_value_with_loss * 0.2
+        return (tax_value, loss)
 
 
 
-    def calculate_tax(self, data: List[UnitCapital])->List[float]:
+    def calculate_tax(self, data: List[UnitCapital], loss: float)->List[float]:
         buy_list = []
         taxes = []
         for item in data:
@@ -36,5 +41,6 @@ class Calculus:
                 buy_list.append(item)
                 taxes.append(0)
             else:
-                taxes.append(self.__calculate_taxes(item, buy_list))
-        return taxes
+                tax, loss = self.__calculate_taxes(item, buy_list, loss)
+                taxes.append(tax)
+        return (taxes, loss)
