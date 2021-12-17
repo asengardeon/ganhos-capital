@@ -1,15 +1,18 @@
-# This is a sample Python script.
+import sys
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+from source.capital.service.process_capital import ProcessCapital
+
+def read_stin():
+    process = ProcessCapital()
+    print("Insira o json de entrada ou então 'sair' para sair ")
+    for line in sys.stdin:
+        if line.strip().lower() == 'sair':
+            sys.exit(0)
+        else:
+            print(process.execute(line))
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
+   read_stin()
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
