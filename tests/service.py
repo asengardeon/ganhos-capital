@@ -1,7 +1,7 @@
 import json
 import unittest
 
-from source.capital.service.process_capital import ProcessCapital
+from capital.service.process_capital import ProcessCapital
 
 
 class ServiceTestCase(unittest.TestCase):

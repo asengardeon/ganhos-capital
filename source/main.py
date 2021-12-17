@@ -1,7 +1,7 @@
 import json
 import sys
 
-from source.capital.service.process_capital import ProcessCapital
+from capital.service.process_capital import ProcessCapital
 
 def read_stin():
     process = ProcessCapital()
@@ -22,7 +22,7 @@ def by_file(file: str):
 if __name__ == '__main__':
     mode = sys.argv[1]
     result = ""
-    if mode == "--interactive":
+    if mode == "--interactive" or mode == "":
         result = read_stin()
     elif mode == '--server':
         pass

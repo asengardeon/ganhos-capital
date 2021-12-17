@@ -3,7 +3,7 @@ from typing import List
 
 from singleton_decorator import singleton
 
-from source.capital.business.unit_capital import UnitCapital, OperationEnum
+from capital.business.unit_capital import UnitCapital, OperationEnum
 
 
 @singleton

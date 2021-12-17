@@ -1,7 +1,7 @@
 import unittest
 
-from source.capital.business.sell_capital import SellCapital
-from source.capital.business.unit_capital import OperationEnum
+from capital.business.sell_capital import SellCapital
+from capital.business.unit_capital import OperationEnum
 from unit_list_factory import UnitListBuilder
 
 

@@ -1,10 +1,9 @@
-import json
 from typing import List
 
-from source.capital.adapter.json_adapter import JsonAdapter
-from source.capital.business.calculus import Calculus
-from source.capital.business.unit_capital import UnitCapital
-from source.capital.repository.capital import CapitalRepository
+from capital.adapter.json_adapter import JsonAdapter
+from capital.business.calculus import Calculus
+from capital.business.unit_capital import UnitCapital
+from capital.repository.capital import CapitalRepository
 
 
 class ProcessCapital:

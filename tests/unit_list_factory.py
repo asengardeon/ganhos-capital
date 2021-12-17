@@ -1,6 +1,6 @@
 from typing import List
 
-from source.capital.business.unit_capital import OperationEnum, UnitCapital
+from capital.business.unit_capital import OperationEnum, UnitCapital
 
 
 class UnitListBuilder:

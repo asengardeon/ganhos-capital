@@ -1,6 +1,6 @@
 import unittest
 
-from source.capital.adapter.json_adapter import JsonAdapter
+from capital.adapter.json_adapter import JsonAdapter
 
 
 class AdapterJSONTestcCase(unittest.TestCase):

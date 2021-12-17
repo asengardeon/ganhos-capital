@@ -1,6 +1,6 @@
 from typing import List
 
-from source.capital.business.unit_capital import UnitCapital
+from capital.business.unit_capital import UnitCapital
 
 
 class SellCapital:
