@@ -28,7 +28,7 @@ class Calculus:
 
 
 
-    def calculate_tax(self, data: List[UnitCapital])->str:
+    def calculate_tax(self, data: List[UnitCapital])->List[float]:
         buy_list = []
         taxes = []
         for item in data:

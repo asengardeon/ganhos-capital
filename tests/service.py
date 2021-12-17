@@ -32,8 +32,8 @@ class ServiceTestCase(unittest.TestCase):
         self.assertEqual(result[2]['tax'], 0)
 
 
-    def test_one_buy_two_sell_operation_with_taxes_case_3(self):
-        json_value = '[{"operation":"buy", "unit-cost":10, "quantity": 10000},{"operation":"sell", "unit-cost":20, "quantity": 5000},{"operation":"sell", "unit-cost":5, "quantity":5000}]'
+    def test_one_buy_two_sell_operation_with_taxes_and_loss_case_3(self):
+        json_value = '[{"operation":"buy", "unit-cost":10, "quantity": 10000},{"operation":"sell","unit-cost":5, "quantity": 5000},{"operation":"sell", "unit-cost":20, "quantity":5000}]'
         process = ProcessCapital()
         result = json.loads(process.execute(json_value))
         self.assertEqual(result[0]['tax'], 0)
