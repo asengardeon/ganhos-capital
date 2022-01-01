@@ -20,7 +20,10 @@ def by_file(file: str):
 
 
 if __name__ == '__main__':
-    mode = sys.argv[1]
+    if len(sys.argv) > 1:
+        mode = sys.argv[1]
+    else:
+        mode = ""
     result = ""
     if mode == "--interactive" or mode == "":
         result = read_stin()
