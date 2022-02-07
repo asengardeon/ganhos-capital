@@ -1,9 +1,9 @@
 from typing import List
 
-from capital.adapter.json_adapter import JsonAdapter
-from capital.business.calculus import Calculus
-from capital.business.unit_capital import UnitCapital
-from capital.repository.capital import CapitalRepository
+from app.capital.adapter.json_adapter import JsonAdapter
+from app.capital.business.calculus import Calculus
+from app.capital.business.unit_capital import UnitCapital
+from app.capital.repository.capital import CapitalRepository
 
 
 class ProcessCapital:

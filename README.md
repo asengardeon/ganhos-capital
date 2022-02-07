@@ -26,7 +26,7 @@ $ pipenv install
 
 Passo 2 - executar o main
 ```sh
-$ python3  source/main.py
+$ python3  app/main.py
 ````
 
 Com isto será aberta uam janela interativa para ficar inserindo os jsons

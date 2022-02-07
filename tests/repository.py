@@ -1,7 +1,7 @@
 import unittest
 
-from capital.adapter.json_adapter import JsonAdapter
-from capital.repository.capital import CapitalRepository
+from app.capital.adapter.json_adapter import JsonAdapter
+from app.capital.repository.capital import CapitalRepository
 
 
 class RepositoryCapitalTestcCase(unittest.TestCase):

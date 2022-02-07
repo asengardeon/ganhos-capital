@@ -1,7 +1,7 @@
 import json
 import sys
 
-from capital.service.process_capital import ProcessCapital
+from app.capital.service.process_capital import ProcessCapital
 
 def read_stin():
     process = ProcessCapital()

@@ -14,7 +14,7 @@ class MyTestCase(unittest.TestCase):
 
 
     def test_file_mode(self):
-        result = self.__execute_cmd("python ../source/main.py --file resources/test_main_with_file.json")
+        result = self.__execute_cmd("python ../main.py --file resources/test_main_with_file.json")
         valid_values = json.loads(result)
         self.assertEqual(len(valid_values), 2)
         self.assertEqual(valid_values[0]['tax'], 0)
