@@ -70,3 +70,23 @@ class ServiceTestCase(unittest.TestCase):
         self.assertEqual(result[3]['tax'], 0)
         self.assertEqual(result[4]['tax'], 3000)
 
+
+    def test_sell_more_than_buy_operation_challenge(self):
+        json_value = '[{"operation":"buy", "unit-cost":10, "quantity": 10000}, {"operation":"sell", "unit-cost":20, "quantity": 11000}]'
+        process = ProcessCapital()
+        result = json.loads(process.execute(json_value))
+        self.assertEqual(len(result), 2)
+        self.assertEqual(result[0]['tax'], 0)
+        self.assertEqual(result[1]['error'], "Can't sell more stocks than you have")
+
+
+    def test_sell_more_than_buy_and_sell_ok_operation_challenge(self):
+        json_value = '[{"operation":"buy", "unit-cost":10, "quantity": 10000}, {"operation":"sell", "unit-cost":20, "quantity": 11000}, {"operation":"buy", "unit-cost":10, "quantity": 10000}, {"operation":"sell", "unit-cost":20, "quantity": 11000}]'
+        process = ProcessCapital()
+        result = json.loads(process.execute(json_value))
+        self.assertEqual(len(result), 4)
+        self.assertEqual(result[0]['tax'], 0)
+        self.assertEqual(result[1]['error'], "Can't sell more stocks than you have")
+        self.assertEqual(result[2]['tax'], 0)
+        self.assertEqual(result[3]['tax'], 22000)
+

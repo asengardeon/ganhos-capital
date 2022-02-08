@@ -28,10 +28,14 @@ class JsonAdapter:
             result.append(new_capital)
         return result
 
+
     def tax_list_to_json(self, data: List[float]):
         result = []
         for item in data:
-            result.append({"tax": item})
+            if item == -1:
+                result.append({"error": "Can't sell more stocks than you have"})
+            else:
+                result.append({"tax": item})
         return json.dumps(result)
 
 

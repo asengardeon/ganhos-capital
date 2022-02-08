@@ -36,11 +36,16 @@ class Calculus:
     def calculate_tax(self, data: List[UnitCapital], loss: float)->List[float]:
         buy_list = []
         taxes = []
+        buy_quantity = 0
         for item in data:
             if item.operation == OperationEnum.BUY:
                 buy_list.append(item)
+                buy_quantity += item.quantity
                 taxes.append(0)
+            elif item.quantity > buy_quantity:
+                taxes.append(-1)
             else:
                 tax, loss = self.__calculate_taxes(item, buy_list, loss)
+                buy_quantity -= item.quantity
                 taxes.append(tax)
         return (taxes, loss)
